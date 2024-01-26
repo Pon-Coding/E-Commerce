@@ -1,0 +1,4 @@
+#Tue Dec 26 13:31:44 ICT 2023
+base.0=/Users/bluehcm-mobile/Desktop/MY SHOP NEW VERSION/my_shop/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
