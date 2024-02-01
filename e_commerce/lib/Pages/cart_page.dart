@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import '../Models/product_model.dart';
-import '../Pages/invoice_page.dart';
-import '../Providers/home_provider.dart';
-import '../TextStyles/fontstyle.dart';
 import 'package:provider/provider.dart';
+import '../models/product_model.dart';
+import '../pages/invoice_page.dart';
+import '../providers/home_provider.dart';
+import '../text_style/fontstyle.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);

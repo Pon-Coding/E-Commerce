@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import '../Models/product_model.dart';
-import '../Providers/home_provider.dart';
-import '../TextStyles/fontstyle.dart';
+import '../models/product_model.dart';
+import '../providers/home_provider.dart';
+import '../text_style/fontstyle.dart';
+
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -66,7 +67,7 @@ class _FavoritePageState extends State<FavoritePage> {
             crossAxisSpacing: 5,
             mainAxisExtent: 150),
         itemBuilder: (context, index) {
-          return _buildItem(context.watch<HomeProvider>().favoriteList[index]);
+          return _buildItem(context.watch<HomeProvider>().favoriteList[index] as ProductModel);
         },
       );
     }

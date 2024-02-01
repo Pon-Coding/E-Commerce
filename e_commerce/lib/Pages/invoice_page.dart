@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Models/product_model.dart';
-import '../TextStyles/fontstyle.dart';
+import '../models/product_model.dart';
+import '../providers/home_provider.dart';
+import '../text_style/fontstyle.dart';
+
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import '../Providers/home_provider.dart';
 
 class InvoicePage extends StatefulWidget {
   const InvoicePage({Key? key}) : super(key: key);
@@ -144,8 +145,8 @@ class _InvoicePageState extends State<InvoicePage> {
             itemCount: context.watch<HomeProvider>().cartList.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 1, mainAxisExtent: 30),
-            itemBuilder: (context, index) {
-              return _buildItem(context.watch<HomeProvider>().cartList[index]);
+            itemBuilder: (context, index) { 
+              return _buildItem(context.watch<HomeProvider>().cartList[index] as ProductModel);
             },
           ),
         ),

@@ -1,71 +1,43 @@
+// To parse this JSON data, do
+//
+//     final productModel = productModelFromJson(jsonString);
+
+import 'package:json_annotation/json_annotation.dart';
+import 'dart:convert';
+
+part 'product_model.g.dart';
+
+List<ProductModel> productModelFromJson(String str) => List<ProductModel>.from(json.decode(str).map((x) => ProductModel.fromJson(x)));
+
+String productModelToJson(List<ProductModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+@JsonSerializable()
 class ProductModel {
-  late int id;
-  late String name;
-  late String image;
-  late double price;
-  late int color;
-  late int qty;
+    @JsonKey(name: "id")
+    int id;
+    @JsonKey(name: "name")
+    String name;
+    @JsonKey(name: "image")
+    String image;
+    @JsonKey(name: "price")
+    int price;
+    @JsonKey(name: "color")
+    int color;
+    @JsonKey(name: "qty")
+    int qty;
 
-  ProductModel({
-    this.id = 0,
-    this.name = "No Name",
-    this.image = "No Image",
-    this.price = 0.0,
-    this.color = 0,
-    this.qty = 0,
-    
-  });
+    ProductModel({
+        required this.id,
+        required this.name,
+        required this.image,
+        required this.price,
+        required this.color,
+        required this.qty,
+    });
+
+    factory ProductModel.fromJson(Map<String, dynamic> json) => _$ProductModelFromJson(json);
+
+    Map<String, dynamic> toJson() => _$ProductModelToJson(this);
 }
-
-List<ProductModel> productList = [
-  ProductModel(
-    id: 1,
-    name: "Dragon Ball",
-    image: "assets/images/shoe2.png",
-    price: 250,
-    color: 0xFFcdc7be,
-    qty: 1,
-  ),
-  ProductModel(
-    id: 2,
-    name: "CG-Air 23",
-    image: "assets/images/shoe3.png",
-    price: 110,
-    color: 0xFF232b33,
-    qty: 1,
-  ),
-  ProductModel(
-    id: 3,
-    name: "Groc-Band",
-    image: "assets/images/shoe4.png",
-    price: 99,
-    color: 0xFF8e6b48,
-    qty: 1,
-  ),
-  ProductModel(
-    id: 4,
-    name: "White-CS3",
-    image: "assets/images/shoe5.png",
-    price: 45,
-    color: 0xFF7a1140,
-    qty: 1,
-  ),
-  ProductModel(
-    id: 5,
-    name: "Nike-ED6",
-    image: "assets/images/shoe6.png",
-    price: 780,
-    color: 0xFF224832,
-    qty: 1,
-  ),
-  ProductModel(
-    id: 6,
-    name: "Classic A1",
-    image: "assets/images/shoe7.png",
-    price: 78,
-    color: 0xFF49272b,
-    qty: 1,
-  ),
-];
 
 

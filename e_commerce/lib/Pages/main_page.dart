@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../Models/product_model.dart';
-import '../Pages/cart_page.dart';
-import '../Pages/favorite_page.dart';
-import '../TextStyles/fontstyle.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-import '../Providers/home_provider.dart';
+import '../constants/product_list_constants.dart';
+import '../models/product_model.dart';
+import '../pages/cart_page.dart';
+import '../pages/favorite_page.dart';
+import '../providers/home_provider.dart';
+import '../text_style/fontstyle.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -55,6 +55,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                     child: const Icon(
                       Icons.favorite_rounded,
+                      color: Colors.white,
                       size: 18,
                     ))),
             const SizedBox(width: 10),
@@ -74,6 +75,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                     child: const Icon(
                       Icons.shopping_cart_rounded,
+                      color: Colors.white,
                       size: 18,
                     ))),
             const SizedBox(width: 15),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../Pages/splash_page.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import '../pages/splash_page.dart';
+import '../providers/home_provider.dart';
 
-import '../Providers/home_provider.dart';
 
 Widget providerWithMainScreen() {
   return MultiProvider(
